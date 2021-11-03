@@ -7,16 +7,16 @@ let  conn=connect();
 setupInput(conn);
 
 
-const con = connect();
-con.on('data', function (message) { // this is how we receive
+
+conn.on('data', function (message) { // this is how we receive
   console.log(`Server says: ${message}`);
 });
 
- con.on('connect', function () {
+ conn.on('connect', function () {
     console.log('client is connected to server.');
   });
-  con.on('connect', () => {
-    con.write('Name: KRV');
+  conn.on('connect', () => {
+    conn.write('Name: KRV');
   });
 
 // con.on('connect', () => {
