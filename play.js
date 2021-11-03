@@ -18,6 +18,8 @@ conn.on('data', function (message) { // this is how we receive
   conn.on('connect', () => {
     conn.write('Name: KRV');
   });
+  
+
 
 // con.on('connect', () => {
 //   con.write('Move: up');

@@ -11,34 +11,38 @@ const setupInput = function (conn) {
 
   // setup interface to handle user input from stdin
   stdin.on("data", function (data) {
-    connection.write('Name: KRV');
-    
+
     if (data === '\u0003') {
 
       process.exit();
-      
+
     }
     else if (data === '\u0077') {
-     
+
       connection.write("Move: up");;
-            
+
     } else if (data === '\u0061') {
-      
-       connection.write("Move: left");
+
+      connection.write("Move: left");
     }
     else if (data === '\u0073') {
-      
-      
-       connection.write("Move: down");
-     }
+
+
+      connection.write("Move: down");
+    }
     else if (data === '\u0064') {
-      
+
       // process.stdout.write('d');
       connection.write("Move: right");
+    } else if (data === 'g') {
+
+      // process.stdout.write('d');
+      connection.write("Say: hi Krv");
     }
 
-      
-  }); 
+
+
+  });
   return stdin;
 };
 
