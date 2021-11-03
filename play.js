@@ -6,16 +6,15 @@ const connect = function () {
     port: 50541,
     host: "165.227.47.243",
   });
-   
 
+  conn.setEncoding("utf8");
    return conn;
 };
 
-console.log("Connecting ...");
+console.log("Connecting ...");  
 
-const con=connect();
-con.on('data', function(message){ // this is how we receive
-  console.log(`Server says: ${message}`);
-  });
+module.exports = {connect}
+
+
 
 
