@@ -2,22 +2,22 @@ const { connect } = require("./client");
 const { setupInput } = require("./input");
 
 console.log("Connecting ...");
-connect();
+let  conn=connect();
 
-setupInput();
+setupInput(conn);
 
 
-// const con = connect();
-// con.on('data', function (message) { // this is how we receive
-//   console.log(`Server says: ${message}`);
-// });
+const con = connect();
+con.on('data', function (message) { // this is how we receive
+  console.log(`Server says: ${message}`);
+});
 
-//  con.on('connect', function () {
-//     console.log('client is connected to server.');
-//   });
-//   con.on('connect', () => {
-//     con.write('Name: KRV');
-//   });
+ con.on('connect', function () {
+    console.log('client is connected to server.');
+  });
+  con.on('connect', () => {
+    con.write('Name: KRV');
+  });
 
 // con.on('connect', () => {
 //   con.write('Move: up');
